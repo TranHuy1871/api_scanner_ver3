@@ -74,7 +74,7 @@ namespace ApiCamScanner.Controllers
             // Kiểm tra sự tồn tại của GroupImage dựa trên GroupId trong cơ sở dữ liệu
             // Ví dụ: Sử dụng ORM (Entity Framework, Dapper) để truy vấn dữ liệu từ MySQL
 
-            string connectionString = "Server=localhost;Port=3306;Database=camscanner;Uid=root;Pwd=12345678;";
+            string connectionString = _config.GetConnectionString("MyConnection");
             MySqlConnection mySqlConnection = new MySqlConnection(connectionString);
 
             string selectGroupImage = "SELECT COUNT(*) FROM groupimages WHERE groupId = @groupId";
@@ -101,7 +101,6 @@ namespace ApiCamScanner.Controllers
             try
             {
                 // Establish a connection to the MySQL database
-                //string connectionString = "Server=localhost;Port=3306;Database=camscanner;Uid=root;Pwd=12345678;";
                 string connectionString = _config.GetConnectionString("MyConnection");
 
                 var mySqlConnection = new MySqlConnection(connectionString);
@@ -177,7 +176,6 @@ namespace ApiCamScanner.Controllers
             // Kiểm tra sự tồn tại của Image dựa trên imageId trong cơ sở dữ liệu
             // Ví dụ: Sử dụng ORM (Entity Framework, Dapper) để truy vấn dữ liệu từ MySQL
 
-            //string connectionString = "Server=localhost;Port=3306;Database=camscanner;Uid=root;Pwd=12345678;";
             string connectionString = _config.GetConnectionString("MyConnection");
 
             MySqlConnection mySqlConnection = new MySqlConnection(connectionString);
@@ -197,7 +195,6 @@ namespace ApiCamScanner.Controllers
             // Xóa Image từ cơ sở dữ liệu dựa trên imageId
             // Ví dụ: Sử dụng ORM (Entity Framework, Dapper) để thực hiện xóa trong MySQL
 
-           // string connectionString = "Server=localhost;Port=3306;Database=camscanner;Uid=root;Pwd=12345678;";
             string connectionString = _config.GetConnectionString("MyConnection");
 
             MySqlConnection mySqlConnection = new MySqlConnection(connectionString);
